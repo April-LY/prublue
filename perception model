@@ -1,0 +1,14 @@
+
+function dBA=sensea(t,BA)
+dBA=zeros(1,1);
+dBA=0.3456*1.05*(0.1-BA);
+end
+
+tspan=[0,50];
+x0=0;
+[T,X]=ode45(@sensea,tspan,x0);
+plot(T,X);
+title('the diffusion model of Benzyl Alcohol');
+xlabel('t(s)');
+ylabel('concentration of Benzyl Alcohol(g/L)');
+axis([0 50 0 0.11])
